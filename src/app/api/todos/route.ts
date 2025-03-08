@@ -17,7 +17,6 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Validate input
     if (!body.title || typeof body.title !== 'string') {
       return NextResponse.json(
         { error: 'Title is required and must be a string' },
@@ -25,7 +24,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create new todo
     const newTodo: Todo = {
       id: Date.now().toString(),
       title: body.title,
@@ -33,7 +31,6 @@ export async function POST(request: NextRequest) {
       createdAt: new Date(),
     };
 
-    // Add to "database"
     todos.push(newTodo);
 
     return NextResponse.json(newTodo, { status: 201 });
