@@ -1,5 +1,15 @@
 import TodoList from "./components/TodoList";
 
+/**
+ * Home Page Component
+ * 
+ * The main page component of the application that serves as the landing page.
+ * Displays a header with the application title, the main TodoList component,
+ * and a footer with additional information.
+ * 
+ * @component
+ * @returns {JSX.Element} A page layout with header, TodoList component, and footer
+ */
 export default function Home() {
 	return (
 		<div className="min-h-screen p-8 flex flex-col items-center">
