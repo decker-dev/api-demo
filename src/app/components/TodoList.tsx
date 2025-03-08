@@ -3,6 +3,15 @@
 import { useState, useEffect } from "react";
 import type { Todo } from "../api/todos/route";
 
+/**
+ * TodoList Component
+ * 
+ * A React component that manages and displays a list of todo items.
+ * Provides functionality for viewing, adding, and managing todo items.
+ * 
+ * @component
+ * @returns {JSX.Element} A todo list interface with input field and list of todos
+ */
 export default function TodoList() {
 	const [todos, setTodos] = useState<Todo[]>([]);
 	const [title, setTitle] = useState("");
