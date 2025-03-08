@@ -27,7 +27,6 @@ export async function GET() {
  * @returns {Promise<NextResponse>}
  * - 201: Returns the created todo item
  * - 400: Returns error if title is missing or invalid
- *
  * @example
  * {
  *   "title": "Buy groceries"
