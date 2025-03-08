@@ -7,15 +7,12 @@ export interface Todo {
   createdAt: Date;
 }
 
-// In-memory store for todos (in a real app, you'd use a database)
 export const todos: Array<Todo> = [];
 
-// GET handler to retrieve all todos
 export async function GET() {
   return NextResponse.json(todos);
 }
 
-// POST handler to create a new todo
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
