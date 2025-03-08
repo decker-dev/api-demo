@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 import { Todo } from '../route';
 
 // In-memory store reference (imported from the main route.ts)

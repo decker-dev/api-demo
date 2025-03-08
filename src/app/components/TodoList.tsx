@@ -88,7 +88,8 @@ export default function TodoList() {
 	};
 
 	// Load todos on component mount
-	useEffect(() => {
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+		useEffect(() => {
 		fetchTodos();
 	}, []);
 
