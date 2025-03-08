@@ -64,7 +64,6 @@ export async function PUT(
   }
 }
 
-// DELETE handler to remove a todo
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
