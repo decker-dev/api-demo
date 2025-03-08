@@ -1,6 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
 
-// Todo type definition
 export interface Todo {
   id: string;
   title: string;
