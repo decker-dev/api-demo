@@ -5,8 +5,7 @@ import type { Todo } from "../api/todos/route";
 /**
  * TodoList component
  * 
- * This component displays a list of todos and allows the user to add, update, and delete todos.
- * It for the fetch API to interact with the backend API.
+ * This is my docs
  * 
  * @returns {JSX.Element} The TodoList component
  */
