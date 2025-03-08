@@ -2,7 +2,14 @@
 
 import { useState, useEffect } from "react";
 import type { Todo } from "../api/todos/route";
-
+/**
+ * TodoList component
+ * 
+ * This component displays a list of todos and allows the user to add, update, and delete todos.
+ * It uses the fetch API to interact with the backend API.
+ * 
+ * @returns {JSX.Element} The TodoList component
+ */
 export default function TodoList() {
 	const [todos, setTodos] = useState<Todo[]>([]);
 	const [title, setTitle] = useState("");
@@ -87,8 +94,8 @@ export default function TodoList() {
 		}
 	};
 
-	// Load todos on component mount
-	useEffect(() => {
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+		useEffect(() => {
 		fetchTodos();
 	}, []);
 
@@ -96,9 +103,8 @@ export default function TodoList() {
 		<div className="w-full max-w-lg">
 			<h1 className="text-2xl font-bold mb-4">Todo List</h1>
 
-			{/* Error message */}
 			{error && (
-				<div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+				<div className="bg-red-500 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
 					{error}
 				</div>
 			)}

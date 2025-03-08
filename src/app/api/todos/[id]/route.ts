@@ -1,11 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { Todo } from '../route';
+import { type NextRequest, NextResponse } from 'next/server';
 
-// In-memory store reference (imported from the main route.ts)
-// Note: In a real app, you'd use a database instead
 import { todos } from '../route';
 
-// GET handler to retrieve a specific todo by ID
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -22,7 +18,6 @@ export async function GET(
   return NextResponse.json(todo);
 }
 
-// PUT handler to update a todo
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -38,7 +33,6 @@ export async function PUT(
       );
     }
 
-    // Validate input
     if (body.title !== undefined && typeof body.title !== 'string') {
       return NextResponse.json(
         { error: 'Title must be a string' },
@@ -53,7 +47,6 @@ export async function PUT(
       );
     }
 
-    // Update todo
     const updatedTodo = {
       ...todos[todoIndex],
       ...(body.title !== undefined ? { title: body.title } : {}),
@@ -71,7 +64,6 @@ export async function PUT(
   }
 }
 
-// DELETE handler to remove a todo
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
