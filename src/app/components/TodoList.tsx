@@ -3,10 +3,9 @@
 import { useState, useEffect } from "react";
 import type { Todo } from "../api/todos/route";
 /**
- * This component displays a list of todos and allows the user to add, update, and delete todos.
- * It uses the fetch API to interact with the backend API.
- * 
- * @returns {JSX.Element} The TodoList component
+ * This is my new TodoList component
+ * It displays a list of todos and allows the user to add, update, and delete todos
+ * It uses the fetch API to interact with the backend API
  */
 export default function TodoList() {
 	const [todos, setTodos] = useState<Todo[]>([]);
