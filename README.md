@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js CRUD API Demo
+
+A simple Todo application demonstrating how to build a CRUD API with Next.js API Routes.
+
+## Features
+
+- Complete CRUD functionality:
+  - Create new todo items
+  - Read all todos or a specific todo
+  - Update todo status (mark as completed/uncompleted)
+  - Delete todos
+- Modern React patterns with hooks
+- Server-side API routes with Next.js
+- In-memory data storage (can be easily replaced with a database)
+- Responsive UI with Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/api-demo.git
+   cd api-demo
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+   ```
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## API Routes
+
+### GET /api/todos
+- Get all todos
+
+### POST /api/todos
+- Create a new todo
+- Request body: `{ "title": "Your todo title" }`
+
+### GET /api/todos/[id]
+- Get a specific todo by ID
+
+### PUT /api/todos/[id]
+- Update a specific todo
+- Request body: `{ "title": "Updated title", "completed": true }`
+
+### DELETE /api/todos/[id]
+- Delete a specific todo
+
+## Project Structure
+
+```
+/src
+  /app
+    /api
+      /todos
+        /[id]
+          route.ts     # Individual todo endpoints (GET, PUT, DELETE)
+        route.ts       # Collection endpoints (GET, POST)
+    /components
+      TodoList.tsx     # Main component for todo management
+    page.tsx           # Main application page
+    layout.tsx         # Root layout
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org/) - React framework
+- [React](https://reactjs.org/) - UI library
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Notes
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This demo uses an in-memory array to store todos. In a real application, you would replace this with a database like MongoDB, PostgreSQL, etc.
