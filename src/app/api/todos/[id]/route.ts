@@ -1,9 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { Todo } from '../route';
 
 import { todos } from '../route';
 
-// GET handler to retrieve a specific todo by ID
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
