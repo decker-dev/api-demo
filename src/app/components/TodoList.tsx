@@ -5,7 +5,7 @@ import type { Todo } from "../api/todos/route";
 /**
  * TodoList component
  * 
- * This is my new components and I'm going to use it in the app.
+ * This is the main component for the TodoList.
  * 
  * @returns {JSX.Element} The TodoList component
  */
