@@ -23,7 +23,6 @@ export async function GET() {
  * @param {NextRequest} request - The incoming request object
  * @body {Object} request.body - The request body
  * @body {string} request.body.title - The title of the todo item
- *
  * @returns {Promise<NextResponse>}
  * - 201: Returns the created todo item
  * - 400: Returns error if title is missing or invalid
