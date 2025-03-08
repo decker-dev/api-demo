@@ -1,8 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { Todo } from '../route';
 
-// In-memory store reference (imported from the main route.ts)
-// Note: In a real app, you'd use a database instead
 import { todos } from '../route';
 
 // GET handler to retrieve a specific todo by ID
