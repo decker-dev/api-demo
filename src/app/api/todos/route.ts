@@ -17,23 +17,44 @@ export async function GET() {
 }
 
 /**
- * Creates a new todo item
- * @route POST /api/todos
- * @param {NextRequest} request - The incoming request object
- * @body {Object} request.body - The request body
- * @body {string} request.body.title - The title of the todo item
- * @returns {Promise<NextResponse>}
- * - 201: Returns the created todo item
- * - 400: Returns error if title is missing or invalid
- * @example
+ * Creates a new todo item in the todo list
+ *
+ * @route {POST} /api/todos
+ *
+ * @param {NextRequest} request - The incoming HTTP request
+ *
+ * @requestBody {Object} body
+ * @requestBody {string} body.title - The title of the todo item to create
+ *
+ * @returns {Promise<NextResponse>} The response object
+ * @success {201} - Todo created successfully
+ * @error {400} - Invalid request body or missing/invalid title
+ *
+ * @example Request
+ * POST /api/todos
+ * Content-Type: application/json
+ *
  * {
  *   "title": "Buy groceries"
  * }
+ *
+ * @example Success Response
+ * HTTP/1.1 201 Created
+ * Content-Type: application/json
+ *
  * {
  *   "id": "1234567890",
  *   "title": "Buy groceries",
  *   "completed": false,
  *   "createdAt": "2024-03-21T10:00:00.000Z"
+ * }
+ *
+ * @example Error Response
+ * HTTP/1.1 400 Bad Request
+ * Content-Type: application/json
+ *
+ * {
+ *   "error": "Title is required and must be a string"
  * }
  */
 export async function POST(request: NextRequest) {
