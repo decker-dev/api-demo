@@ -18,7 +18,6 @@ export async function GET(
   return NextResponse.json(todo);
 }
 
-// PUT handler to update a todo
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -34,7 +33,6 @@ export async function PUT(
       );
     }
 
-    // Validate input
     if (body.title !== undefined && typeof body.title !== 'string') {
       return NextResponse.json(
         { error: 'Title must be a string' },
@@ -49,7 +47,6 @@ export async function PUT(
       );
     }
 
-    // Update todo
     const updatedTodo = {
       ...todos[todoIndex],
       ...(body.title !== undefined ? { title: body.title } : {}),
