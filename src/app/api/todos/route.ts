@@ -19,7 +19,6 @@ export async function GET() {
 /**
  * Creates a new todo item
  * @route POST /api/todos
- *
  * @param {NextRequest} request - The incoming request object
  * @body {Object} request.body - The request body
  * @body {string} request.body.title - The title of the todo item
