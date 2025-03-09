@@ -11,34 +11,39 @@ export interface Todo {
 // In-memory store for todos (in a real app, you'd use a database)
 export const todos: Array<Todo> = [];
 
-// GET handler to retrieve all todos
+/**
+ * Get all them todos what is stored in the system
+ *
+ * @route {GET} /api/todos
+ *
+ * @return {Promise<NextResponse>} It give back all todo items what we has
+ * @success {200} - All todo was fetched good
+ *
+ * @example Response what you gets
+ * HTTP/1.1 200 OK
+ * Content-Type: application/json
+ *
+ * [
+ *   {
+ *     "id": "1234567890",
+ *     "title": "Do homework",
+ *     "completed": false,
+ *     "createdAt": "2024-03-21T10:00:00.000Z"
+ *   },
+ *   {
+ *     "id": "0987654321",
+ *     "title": "Buy milk",
+ *     "completed": true,
+ *     "createdAt": "2024-03-20T15:30:00.000Z"
+ *   }
+ * ]
+ *
+ * @note They ain't no error responses cos this endpoint cant fail innit
+ */
 export async function GET() {
   return NextResponse.json(todos);
 }
 
-/**
- * Creates a new todo item
- * @route POST /api/todos
- *
- * @param {NextRequest} request - The incoming request object
- * @body {Object} request.body - The request body
- * @body {string} request.body.title - The title of the todo item
- *
- * @returns {Promise<NextResponse>}
- * - 201: Returns the created todo item
- * - 400: Returns error if title is missing or invalid
- *
- * @example
- * {
- *   "title": "Buy groceries"
- * }
- * {
- *   "id": "1234567890",
- *   "title": "Buy groceries",
- *   "completed": false,
- *   "createdAt": "2024-03-21T10:00:00.000Z"
- * }
- */
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
